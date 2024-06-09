@@ -1,70 +1,83 @@
 ---
-import Hero from '@/components/Hero.astro';
-import Layout from '@/layouts/Layout.astro';
+import Hero from "@/components/Hero.astro";
+import Layout from "@/layouts/Layout.astro";
+import myImage from "../assets/fakeproject.jpg";
+import ProjectCard from "@/components/ProjectCard.astro";
 ---
 
 <Layout title="Hello There!">
-	<main>
-		<Hero
+  <main class="flex flex-col text-white p-20 pt-10">
+    <nav class="max-w-xl mx-auto">
+      <ul class="flex gap-16">
+        <li class="group relative w-max">
+          <a href="#" class="px-1 relative z-10 group-hover:text-white">HOME</a>
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 transition-all bg-yellow-400 z-0 group-hover:h-full"
+          ></span>
+        </li>
+        <li class="group relative w-max">
+          <a href="#projects" class="px-1 relative z-10 group-hover:text-white"
+            >PROYECTS</a
+          >
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 transition-all bg-yellow-400 z-0 group-hover:h-full"
+          ></span>
+        </li>
+        <li class="group relative w-max">
+          <a href="#" class="px-1 relative z-10 group-hover:text-white"
+            >CONTACT</a
+          >
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 transition-all bg-yellow-400 z-0 group-hover:h-full"
+          ></span>
+        </li>
+        <li class="group relative w-max">
+          <a href="#" class="px-1 relative z-10 group-hover:text-white"
+            >RESUME</a
+          >
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 transition-all bg-yellow-400 z-0 group-hover:h-full"
+          ></span>
+        </li>
+      </ul>
+    </nav>
+    <section class="h-screen flex flex-col justify-center">
+      <header class="flex flex-col md:flex-row md:justify-around">
+        <div>
+          <span class="text-white ml-2"
+            >If you've made it this far , you're probably looking for a...</span
+          >
+          <h1 class="font-bold text-7xl text-yellow-400">
+            Software Developer 🗲
+          </h1>
+        </div>
+        <article class="mt-10">
+          <p class="text-lg max-w-prose mx-auto">
+            My name is Martin, and I specialize in creating dynamic,
+            user-friendly web applications using technologies like React,
+            JavaScript, and TypeScript. With over five years of experience in
+            the field, I am committed to delivering high-quality solutions that
+            meet and exceed client expectations.
+          </p>
+          <button class="bg-yellow-400 rounded text-black font-bold p-2 mt-10"
+            >Take a look to my proyects</button
+          >
+        </article>
+      </header>
+    </section>
 
-	</main>
-</Layout>
+    <!-- ############### proyects and skills -->
 
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
+    <section class="h-screen flex flex-col" id="projects">
+      <h2 class="text-4xl text-yellow-400 mb-8">Proyects and tech</h2>
+      <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 gap-4">
+          <ProjectCard title="Fake Project" image={myImage} />
+          <ProjectCard title="Fake Project" image={myImage} />
+          <ProjectCard title="Fake Project" image={myImage} />
+          <ProjectCard title="Fake Project" image={myImage} />
+        </div>
+      </div>
+    </section>
+  </main></Layout
+>
